@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scrollIntoView Example</title>
+  <style>
+    #targetElement {
+      height: 200px;
+      overflow: auto;
+    }
+    .content {
+      height: 800px;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="targetElement">
+  <div class="content">
+    <p>This is a long content that extends beyond the viewport height.</p>
+  </div>
+</div>
+
+<button onscroll="scrollToContent()">Scroll to Content</button>
+
+<script>
+  function scrollToContent() {
+    var targetElement = document.getElementById('targetElement');
+    var contentElement = document.querySelector('.content');
+
+    // Using scrollIntoView to scroll the content element into view
+    contentElement.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
